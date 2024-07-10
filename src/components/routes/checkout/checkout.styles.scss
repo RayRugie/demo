@@ -8,26 +8,29 @@ body {
 }
 
 .header {
-  background-color: #64350A;
+  background-color: #64350a;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em 2em;
+  padding: 1em 5%;
   height: 80px;
+  white-space: nowrap;
 
   .logo {
     img {
       width: 50%;
-      height: auto;
+      height: 50%;
     }
   }
 
   .navigation {
-    align-items: center;
-    margin-right: 20%;
-    width: 60%;
     display: flex;
+    align-items: center;
+
+    @media (max-width:900px) {
+      display: none;
+    }
 
     ul {
       display: flex;
@@ -35,23 +38,17 @@ body {
       list-style: none;
       padding: 0;
       margin: 0;
-      margin-left: 7%;
-      margin-top: 1%;
-      white-space: nowrap;
 
       li {
         a {
-          color: #ffff;
+          color: #fff;
           text-decoration: none;
-          font-family: 'Montserrat', sans-serif;
+          font-family: "Montserrat", sans-serif;
           transition: text-decoration 0.3s ease;
-          /* Add transition for hover effect */
 
           &.active {
-            color: #fff !important;
             text-decoration: underline;
             text-decoration-thickness: 3px;
-
           }
 
           &:hover {
@@ -60,32 +57,23 @@ body {
           }
         }
       }
-
-
-
-    }
-
-    .cart {
-      text-decoration: #ffff underline;
-      text-decoration-thickness: 2px;
-
-      .cart:active {
-        text-decoration: underline;
-      }
     }
   }
 
   .back-button {
-    background: #D27C2C;
+    background: #d27c2c;
     color: white;
     border: none;
     padding: 0.5em 1em;
     cursor: pointer;
     font-size: 1em;
     border-radius: 11px;
+
+    &:hover {
+      background: darken(#d27c2c, 10%);
+    }
   }
 }
-
 
 .checkout-form {
   text-align: center;
@@ -110,6 +98,8 @@ body {
     .form-group-name {
       display: flex;
       justify-content: space-between;
+      gap: 1rem;
+      width: 60%;
 
       @media (max-width: 900px) {
         flex-direction: column;
@@ -119,8 +109,11 @@ body {
 
       .form-group-first {
         margin-bottom: 1.5em;
-        width: 80%;
         text-align: start;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        width: 60%;
 
         @media (max-width:900px) {
           width: 100%;
@@ -133,24 +126,23 @@ body {
         }
 
         input[type="text"] {
-          width: 100%;
+          width: 80%;
           height: 55%;
-          padding: 0.5em;
+          padding: 1em 0.5em;
           font-size: 1em;
           border: 1px solid #ccc;
           border-radius: 5px;
-
-          &:hover {
-            border-color: #5C2C06;
-          }
-
+          outline: none;
         }
       }
 
       .form-group-last {
         margin-bottom: 1.5em;
-        width: 80%;
+        width: 60%;
         text-align: start;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
 
         @media (max-width:900px) {
           width: 100%;
@@ -167,22 +159,18 @@ body {
         input[type="text"] {
           width: 100%;
           height: 55%;
-          padding: 0.5em;
+          padding: 1em 0.5em;
           font-size: 1em;
           border: 1px solid #ccc;
           border-radius: 5px;
-
-          &:hover {
-            border-color: #5C2C06;
-          }
+          outline: none;
         }
       }
-
     }
 
     .form-group {
       margin-bottom: 1.5em;
-      width: 80%;
+      width: 60%;
       height: 60%;
 
       label {
@@ -197,14 +185,11 @@ body {
       select {
         width: 100%;
         height: 50%;
-        padding: 0.5em;
+        padding: 1em 0.5em;
         font-size: 1em;
         border: 1px solid #ccc;
         border-radius: 5px;
-
-        &:hover {
-          border-color: #5C2C06;
-        }
+        outline: none;
       }
     }
 
@@ -215,6 +200,7 @@ body {
       input[type="checkbox"] {
         transform: scale(1.9);
         margin-right: 0.5em;
+        outline: none;
       }
 
       label {
