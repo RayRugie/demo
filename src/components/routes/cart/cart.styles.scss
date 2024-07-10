@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap");
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f7f7f7;
+}
+
+.cart-page {
+    width: 100%;
+
+    .header {
+        background-color: #64350a;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 5%;
+        height: 80px;
+        white-space: nowrap;
+
+        .logo {
+            img {
+                width: 50%;
+                height: 50%;
+            }
+        }
+
+        .navigation {
+            display: flex;
+            align-items: center;
+
+            @media (max-width:900px) {
+                display: none;
+            }
+
+            ul {
+                display: flex;
+                gap: 4rem;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+
+                li {
+                    a {
+                        color: #fff;
+                        text-decoration: none;
+                        font-family: "Montserrat", sans-serif;
+                        transition: text-decoration 0.3s ease;
+
+                        &.active {
+                            text-decoration: underline;
+                            text-decoration-thickness: 3px;
+                        }
+
+                        &:hover {
+                            text-decoration: underline;
+                            text-decoration-thickness: 2px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .back-button {
+            background: #d27c2c;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            font-size: 1em;
+            border-radius: 11px;
+
+            &:hover {
+                background: darken(#d27c2c, 10%);
+            }
+        }
+    }
+
+    main {
+        @media (max-width:900px) {
+            padding: 0 5%;
+        }
+
+        .shopping-cart-head {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+
+            h1 {
+                font-family: Montserrat;
+                font-size: 2rem;
+                font-weight: 700;
+            }
+
+            p {
+                font-family: Montserrat;
+                font-size: 22px;
+                font-weight: 400;
+
+                @media (max-width:900px) {
+                    display: none;
+                }
+            }
+        }
+
+        .cart-container {
+            display: flex;
+            justify-content: center;
+
+            @media (max-width: 900px) {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .cart-side {
+                width: 70%;
+                padding-left: 5%;
+
+                @media (max-width: 900px) {
+                    width: 100%;
+                }
+
+                .cart-table {
+                    width: 100%;
+                    padding-top: 5rem;
+
+                    @media (max-width:900px) {
+                        padding-top: 0rem;
+                    }
+
+                    table {
+                        width: 90%;
+
+                        tr {
+                            @media (max-width:900px) {
+                                background: white;
+                            }
+                        }
+
+                        td {
+                            padding: 8px;
+                            text-align: left;
+                            border-bottom: 1px solid #A09E9E99;
+                        }
+
+                        th {
+                            padding: 1rem;
+                            text-align: left;
+                            border-top: 1px solid #A09E9E99;
+                            background-color: none;
+
+                            @media (max-width:900px) {
+                                display: none;
+                            }
+                        }
+
+                        .product-info {
+                            display: flex;
+                            align-items: center;
+
+                            img {
+                                width: 100px;
+                                height: 100px;
+                                padding-right: 10px;
+                            }
+
+                            .item {
+                                @media (max-width:900px) {
+                                    font-size: 1.2rem;
+                                }
+                            }
+
+                            .remove-button {
+                                background: none;
+                                border: 1px solid black;
+                                border-radius: 50%;
+                                padding: 5px;
+                                cursor: pointer;
+                                color: red;
+
+                                @media (max-width:900px) {
+                                    display: none;
+                                }
+                            }
+                        }
+
+                        .quantity-control {
+                            @media (max-width:900px) {
+                                display: none;
+                            }
+
+                            .quantity-buttons {
+                                display: flex;
+                                gap: 5px;
+                                align-items: center;
+
+                                button {
+                                    background: #d27c2c;
+                                    padding: 5px;
+                                    cursor: pointer;
+                                    border: none;
+                                    color: white;
+                                    width: 30px;
+                                    height: 30px;
+                                    font-size: 18px;
+                                }
+
+                                span {
+                                    margin: 5px 0;
+                                }
+                            }
+                        }
+
+                        .price {
+                            @media (max-width:900px) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .order-summary {
+                width: 30%;
+                max-height: 100vh;
+                min-height: 80vh;
+                background-color: #D27C2C26;
+                padding: 2rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                font-family: Montserrat, sans-serif;
+
+                @media (max-width: 900px) {
+                    width: 90%;
+                    height: fit-content;
+                    margin-top: 2rem;
+                }
+
+                h2 {
+                    font-family: Montserrat;
+                    font-size: 22px;
+                    font-weight: 700;
+                    color: #d27c2c;
+                    text-align: center;
+                }
+
+                .divider {
+                    width: 100%;
+                    height: 2px;
+                    background-color: #64350a;
+                    margin: 10px 0;
+                }
+
+                .order {
+                    width: 90%;
+
+                    .item,
+                    .delivery,
+                    .tax,
+                    .payment-options {
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        padding: 10px 0;
+                    }
+
+                    .payment-options {
+                        img {
+                            width: 50px;
+                            margin-left: 5px;
+                        }
+                    }
+                }
+
+                .promo {
+                    width: 90%;
+
+                    p {
+                        font-family: Montserrat;
+                    }
+
+                    input[type="text"] {
+                        outline: none;
+                        border: none;
+                        width: 100%;
+                        padding: 1rem;
+                    }
+                }
+
+                .total-price {
+                    display: flex;
+                    justify-content: space-between;
+                    font-weight: 700;
+                    width: 100%;
+                    font-size: 1.2em;
+                }
+
+                .checkout-button {
+                    width: 60%;
+                    padding: 0.6rem;
+                    background-color: #d27c2c;
+                    border: none;
+                    color: white;
+                    cursor: pointer;
+                    font-family: Montserrat, sans-serif;
+                    font-size: 1em;
+
+                    &:hover {
+                        background: darken(#d27c2c, 10%);
+                    }
+                }
+            }
+        }
+    }
+}
